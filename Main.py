@@ -1,4 +1,4 @@
-
+from gameData import game_data, genre
 
 
 def greet(name = None):
@@ -19,5 +19,4 @@ def greet(name = None):
         return ## Add funciton here later
     
     
-    
-greet()
+
