@@ -2,7 +2,6 @@ genre = ['Adventure', 'Puzzle', 'Role-playing', 'Simulation', 'Strategy', 'Sport
     , 'Roguelike', 'Role playing' , 'Platformer', 'Shooter', 'Fighting', 'Survival', 'Rhythm', 'Battle Royale', 'Action Adventure']
 
 game_data = [
-    ['Type', "Game name", "age"]
     ['Sandbox', 'Minecraft', 10]
     ['Battle Royale', 'Fortnite', 12]
     ['Shooter', 'Counter-Strike: Global Offensive', 18]
