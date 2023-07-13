@@ -1,4 +1,4 @@
-genre = ['Adventure', 'Puzzle', 'Role-playing', 'Simulation', 'Strategy', 'Sports', 'MMO', 'Sandbox', 'Moba', 'Action RPG', 'MMORPG'\
+genre = ['Adventure', 'Puzzle', 'Simulation', 'Strategy', 'Sports', 'MMO', 'Sandbox', 'Moba', 'Action RPG', 'MMORPG'\
     , 'Roguelike', 'Role playing' , 'Platformer', 'Shooter', 'Fighting', 'Survival', 'Rhythm', 'Battle Royale', 'Action Adventure']
 
 game_data = [['Sandbox', 'Minecraft', '10'],
