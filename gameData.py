@@ -1,5 +1,5 @@
-genre = ['Adventure', 'Puzzle', 'Simulation', 'Strategy', 'Sports', 'MMO', 'Sandbox', 'Moba', 'Action RPG', 'MMORPG'\
-    , 'Roguelike', 'Role playing' , 'Platformer', 'Shooter', 'Fighting', 'Survival', 'Rhythm', 'Battle Royale', 'Action Adventure']
+genres = ['Puzzle', 'Simulation', 'Strategy', 'Sports', 'MMO', 'Sandbox', 'Moba', 'Action RPG', 'MMORPG'\
+    , 'Roguelike', 'Role playing' , 'Platformer', 'Shooter', 'Fighting', 'Survival', 'Rhythm', 'Battle Royale', 'Action Adventure', 'Adventure']
 
 game_data = [['Sandbox', 'Minecraft', '10'],
             ['Battle Royale', 'Fortnite', '12'],
@@ -38,6 +38,7 @@ game_data = [['Sandbox', 'Minecraft', '10'],
             ['Role Playing', 'Ruined King: A League of Legends Story', '16'],
             ['Battle Royale', 'PUBG: Battlegrounds', '16'],
             ['Adventure', 'Dave the Diver', '13'],
+            ['Adventure', "Tiny Tina's Wonderlands", '18'],
             ['Survival', 'Rust', '18'],
             ['Action Adventure', 'Red Dead Redemption 2', '18'],
             ['Survial', 'Project Zomboid', '13'],
