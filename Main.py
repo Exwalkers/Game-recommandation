@@ -4,14 +4,15 @@ from Linkedlist import LinkedList
 
 choices = ["y", "n"]
 
-
+# function for setting up a linked list for all game genre's
 def genre_data():
     genre_data = LinkedList()
     for genre in genres:
         genre_data.insert_data(genre)
     return genre_data
 
-# make a for loop for genres, then a new list for genre sublist, then for each game if game matches genre insert data then insert sublist
+
+# function for setting up a linkedlist with all games inside
 def games():
     all_games = LinkedList()
     for genre in genres:
@@ -23,7 +24,9 @@ def games():
     return all_games
 
 
+# function for placing all genre's into a list to use to compare against
 def list_genres():
+    game_genres = genre_data() 
     genres_head = game_genres.get_head_node()
     genre_list = []
     while genres_head.get_next_node() is not None:
@@ -103,7 +106,7 @@ def user_supplied():
     print("The game to play is going to be... {0}".format(game_list[randrange(len(game_list))]))
     
     
-
+# function for compairing the user's input data versus the genre's in the linkedlist(using list_genres function above)
 def search_letter(letter):
     matched_genre = []
     genre = list_genres()
@@ -114,7 +117,7 @@ def search_letter(letter):
         return None
     return matched_genre
 
-
+# function for printing lines to break up text between questions
 def lines():
     return print("-" * 180)
 
@@ -154,20 +157,24 @@ def by_genre(age):
             
 # final function for looking through the data for games that match the user's genre they wish to see        
 def data_search(word, age):
-    # setting up a list to store matched games into
     matched_games = []
-    # loop to check if the genre's match and age is within the search range
-    for game in game_data:
-        if word[0] == game[0]:
-            if int(game[2]) < int(age):
-                temp = [game[1]]
-                matched_games.append(temp)
+    # calles the games function and sets up a variable to be the head node to start a while loop with
+    games_list = games()
+    head = games_list.get_head_node()
+    # while loop to compare requests genre versus the data in the games linkedlist
+    while head.get_next_node() is not None:
+        sub_head = head.get_value().get_head_node()
+        if sub_head.get_value()[0].lower() == word[0].lower():
+            while sub_head.get_next_node() is not None:
+                if int(sub_head.get_value()[2]) < int(age):
+                    matched_games.append(sub_head.get_value()[1])
+                sub_head = sub_head.get_next_node()
+        head = head.get_next_node()
+        
     # If not games are compatiable with the age rating print error
     if not matched_games:
         print("there were no games found that match your criteria, please try again with a different age rating ")
-    
-    # If the genre only contains one game... this is purely here for how the current data structure is as i code i will need to add more games 
-    # so this can not happen
+    # This if statement is here due to current data set where there is a chance to only get one game returned
     elif len(matched_games) == 1:
         print("The game to play from the {0} genre is: {1}".format(word[0], matched_games[0]))
     # else ask the user if they would like to see all games in the genre or if no print a random game for them to play 
@@ -181,25 +188,12 @@ def data_search(word, age):
             lines()
             print("Here are the games that match your genre of {0}: ".format(word[0]))
             for item in matched_games:
-                print(item[0])
+                print(item)
         else:
             print("Here is the game we recommend you to play!: {0}".format(matched_games[randrange(len(matched_games))][0]))
         
                 
         
-game_genres = genre_data()      
-#temp = games()
-#head = temp.get_head_node()
-#while head.get_next_node() is not None:
-#    sub_head = head.get_value().get_head_node()
-#    if sub_head.get_value()[0] == "Simulation":
-#        while sub_head.get_next_node() is not None:
-#            print(sub_head.get_value()[1])
-#            sub_head = sub_head.get_next_node()
-#    head = head.get_next_node()
+    
 
-
-#temp = search_letter("d")
-#if temp is None:
-#    print("It's None")
 greet() 
